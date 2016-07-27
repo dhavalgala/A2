@@ -23,7 +23,12 @@ export class HeroesComponent implements OnInit {
     }
 
     selectedHero: Hero;
-    onSelect(hero: Hero) { this.selectedHero = hero; }
+    onSelect(hero: Hero) {
+        this.selectedHero = hero;
+        setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 100);
+    }
 
     gotoDetail() {
         let link = ['/detail', this.selectedHero.id];

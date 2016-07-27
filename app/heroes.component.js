@@ -24,7 +24,12 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.ngOnInit = function () {
         this.getHeroes();
     };
-    HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
+    HeroesComponent.prototype.onSelect = function (hero) {
+        this.selectedHero = hero;
+        setTimeout(function () {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 100);
+    };
     HeroesComponent.prototype.gotoDetail = function () {
         var link = ['/detail', this.selectedHero.id];
         this.router.navigate(link);
